@@ -1,0 +1,40 @@
+type Image @model @searchable @auth(
+rules: [
+  { allow: owner, ownerField: "owner", identityClaim: "sub"},
+])
+{
+  id:ID!
+  owner:String!
+  s3key:String!
+  createdAt:String
+  tags:[String]
+  collections:[ImageAndCollection] @connection(keyName:"ImageCollectionIndex", fields:["id"])
+}
+
+type Collection @model @key(fields:["name"]) @auth(
+rules: [
+  { allow: owner, ownerField: "owner", identityClaim: "sub"},
+])
+{
+  name:String!
+  owner:String!
+  createdAt:String
+  images:[ImageAndCollection] @connection(keyName:"CollectionImageIndex",  fields:["name"])
+}
+
+type ImageAndCollection @model
+@auth(
+rules: [
+  { allow: owner, ownerField: "owner", identityClaim: "sub"},
+])
+@key(name:"CollectionImageIndex", fields:["collectionName"])
+@key(name:"ImageCollectionIndex", fields:["imageID"])
+{
+  id:ID!
+  owner:String!
+  collectionName:String!
+  imageID:ID!
+  createdAt:String
+  collection: Collection @connection(sortField:"updatedAt", fields:["collectionName"])
+  image: Image @connection(sortField:"updatedAt",fields:["imageID"])
+}

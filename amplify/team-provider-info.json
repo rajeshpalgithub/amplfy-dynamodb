@@ -1,0 +1,20 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-homeimageai-dev-02727-authRole",
+      "UnauthRoleArn": "arn:aws:iam::027553417098:role/amplify-homeimageai-dev-02727-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::027553417098:role/amplify-homeimageai-dev-02727-authRole",
+      "Region": "ap-southeast-2",
+      "DeploymentBucketName": "amplify-homeimageai-dev-02727-deployment",
+      "UnauthRoleName": "amplify-homeimageai-dev-02727-unauthRole",
+      "StackName": "amplify-homeimageai-dev-02727",
+      "StackId": "arn:aws:cloudformation:ap-southeast-2:027553417098:stack/amplify-homeimageai-dev-02727/e5902ec0-c178-11eb-a529-0250ac48387c",
+      "AmplifyAppId": "duh5ld460ir7o"
+    },
+    "categories": {
+      "auth": {
+        "homeimageai6be47c99": {}
+      }
+    }
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "AppSyncApiName": "homeimageai",
+  "DynamoDBBillingMode": "PAY_PER_REQUEST",
+  "DynamoDBEnableServerSideEncryption": false,
+  "AuthCognitoUserPoolId": {
+    "Fn::GetAtt": [
+      "authhomeimageai6be47c99",
+      "Outputs.UserPoolId"
+    ]
+  }
+}
